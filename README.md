@@ -1,5 +1,4 @@
-# Real-Estate
-Real Estate Application using Django
+# Real-Estate Application using Django
 
 How To Use it 
 ### Get the code
