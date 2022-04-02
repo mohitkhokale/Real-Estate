@@ -2,12 +2,10 @@
 Real Estate Application using Django
 
 How To Use it 
-<<<<<<< HEAD
 ### Get the code
 * git clone https://github.com/app-generator/django-datatables-sample.git
 * cd django-datatables-sample
-=======
- 
+  
 ### Virtualenv modules installation (Unix based systems)
 * virtualenv env
 * source env/bin/activate
@@ -32,7 +30,4 @@ How To Use it
 ### Start the app - custom port
 * python manage.py runserver 0.0.0.0:<your_port>
 
-### Access the web app in browser: http://127.0.0.1:8000/
-=======
- Access the web app in browser: http://127.0.0.1:8000/
- 
+### Access the web app in browser: http://127.0.0.1:8000/ 
