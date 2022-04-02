@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+{% block content %}
+{% if request.user.is_authenticated %}
+
+<style>
+    #id_Budget,
+    #id_requirement_type,
+    #id_location,
+    #id_duration,
+    #id_property_type {
+        display: flex;
+
+    }
+
+    label {
+        display: inline-block;
+        max-width: 100%;
+        margin-bottom: 5px;
+        font-weight: 700;
+        padding-left: 10px;
+    }
+</style>
+<div class="content-area recent-property padding-top-40" style="background-color: #FFF;">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <div class="" id="contact1">
+                    <h2>Enquiry form</h2>
+                    <form method="POST">
+                        {% csrf_token %}
+                        <div class="row">
+                            {{form_class.as_p}}
+
+                            <input type="hidden" name="user_id" value="{{request.user.id}}">
+                            <input type="hidden" name="user_name" value="{{request.user}}">
+                            <div class="col-sm-12 text-center">
+                                <button type="submit" class="btn btn-primary"><i class="fa fa-envelope-o"></i> Send
+                                    message</button>
+                                <br>
+                                <br>
+                                <br>
+                            </div>
+                            <!-- /.row -->
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {% else %}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 col-md-offset-2">
+    <h1 style='height:200px'><br>Please login to access this page </h1>
+            </div>
+            </div>
+            </div>
+    {% endif %}
+
+    {% endblock %}

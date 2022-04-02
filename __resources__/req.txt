@@ -1,0 +1,31 @@
+
+
+PROPERTY 
+prop_name
+prop_img
+prop_area
+prop_Status : For Sale / Not Available / Sold 
+prop_price
+prop_features : SWIMMING POOL  / 3 STORIES /  CENTRAL COOLING /  JOG PATH 2  / 2 LAWN /  BIKE PATH 
+prop_State 
+prop_City 
+prop_description
+agent_name
+agent_contact
+agent_about
+
+create from Users registration - UserProfile 
+    Name (*)
+    Email Id (*)
+    Contact Number (*)
+    
+Enquiry Form:
+    requirement_type: 1bhk/ 2bhk / 3bhk
+    date_of_inquiry:
+    How long are you planing to stay?: 1 month / 3 month / 1 Year / Not Sure how long
+    What kind of property are you interested in?:  Raw Land / Lot in a Development /Single Family Home / Other
+    What kind of location are you interested in?: Ocean View/ Beachfront/ In Town/ Farm or Ranch / Other
+    What is your budget?: 0-50k / 50k - 5L / 5L-15L
+    Questions/Comments
+
+ 

@@ -1,0 +1,122 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div class="properties-area recent-property" style="background-color: #FFF;">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-9 padding-top-40 properties-page">
+                <div class="section clear">
+                    <div class="col-xs-10 page-subheader sorting pl0">
+                        <ul class="sort-by-list">
+                            <li class="active">
+                                <a href="javascript:void(0);" class="order_by_date" data-orderby="property_date"
+                                    data-order="ASC">
+                                    Property Date <i class="fa fa-sort-amount-asc"></i>
+                                </a>
+                            </li>
+                            <li class="">
+                                <a href="javascript:void(0);" class="order_by_price" data-orderby="property_price"
+                                    data-order="DESC">
+                                    Property Price <i class="fa fa-sort-numeric-desc"></i>
+                                </a>
+                            </li>
+                        </ul>
+                        <!--/ .sort-by-list-->
+
+                    </div>
+
+                    <!-- <div class="col-xs-2 layout-switcher">
+                        <a class="layout-list" href="javascript:void(0);"> <i class="fa fa-th-list"></i> </a>
+                        <a class="layout-grid active" href="javascript:void(0);"> <i class="fa fa-th"></i> </a>
+                    </div> -->
+                    <!--/ .layout-switcher-->
+                </div>
+
+                <div class="section clear">
+                    {% for prop in data %}
+                    <div id="list-type" class="proerty-th">
+                        <div class="col-sm-6 col-md-4 p0">
+                            <div class="box-two proerty-item">
+                                <div class="item-thumb">
+                                    <a href="{% url 'property' property_id=prop.id %}"><img
+                                            src="{{prop.prop_img.url}}"></a>
+                                </div>
+
+                                <div class="item-entry overflow">
+                                    <h5><a href="{% url 'property' property_id=prop.id %}"> {{prop}}</a></h5>
+                                    <div class="dot-hr"></div>
+                                    <span class="pull-left"><b> Area :</b> {{prop.prop_area}} m </span>
+                                    <span class="proerty-price pull-right"> ₹ {{prop.prop_price}}</span>
+                                    <p style="display: none;">{{prop.prop_description}}}</p>
+                                    <div class="property-icon">
+                                        <img src="{% static 'assets/img/icon/bed.png' %}">(5)|
+                                        <img src="{% static 'assets/img/icon/shawer.png' %}">(2)|
+                                        <img src="{% static 'assets/img/icon/cars.png' %}">(1)
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+                    </div>
+                    {% empty %}
+                    <b> NO DATA FOUND</b>
+                    {% endfor %}
+                </div>
+
+
+            </div>
+            <div class="col-md-3 pl0 padding-top-40">
+                <div class="blog-asside-right pl0">
+                    <div class="panel panel-default sidebar-menu wow fadeInRight animated">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">Smart search</h3>
+                        </div>
+                        <div class="panel-body search-widget">
+                            <form action="" method="GET" class=" form-inline">
+                                <fieldset>
+                                    <div class="row">
+                                        <div class="col-xs-12">
+                                            <input type="text" class="form-control" name="search"
+                                                placeholder="Search...">
+                                            <!-- {% if 'search' in request.GET %}
+                                            {% else %}
+                                            <style>
+                                                .no_rec {
+                                                    display: none;
+                                                }
+                                            </style>
+                                            {% endif %}
+                                            {% for dd in search_prop %}
+                                            <a href="{% url 'properties' property_id=dd.id %}"> > <u>{{dd}}</u></a>
+                                            {% empty %}
+                                            <span class="no_rec">NO RECORD FOUND <br>
+                                                <a class="view_all" href="{% url 'properties' %}"> > <u>View All
+                                                        Properties</u></a>
+                                            </span>
+                                            {% endfor %} -->
+                                        </div>
+
+                                    </div>
+                                </fieldset>
+
+
+                                <fieldset>
+                                    <div class="row">
+                                        <div class="col-xs-12">
+                                            <input class="button btn largesearch-btn" value="Search" type="submit">
+                                        </div>
+                                    </div>
+                                </fieldset>
+                            </form>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}
