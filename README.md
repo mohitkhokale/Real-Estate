@@ -3,7 +3,7 @@ Real Estate Application using Django
 
 How To Use it 
 > Get the code
-> git clone https://github.com/app-generator/django-datatables-sample.git
+git clone https://github.com/app-generator/django-datatables-sample.git
 cd django-datatables-sample
 
  Virtualenv modules installation (Unix based systems)
